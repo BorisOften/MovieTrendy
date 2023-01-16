@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     let activityIndi = UIActivityIndicatorView()
     
     //variables
-    var cellData = [MoviesResult]()
+    var cellData = [MovieCellViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,17 +76,21 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.rowHeight = 150
+        
         registerCell()
     }
     
     func registerCell(){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(MainMovieCell.self, forCellReuseIdentifier: MainMovieCell.identifier)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let movieData = cellData[indexPath.row]
-        cell.textLabel?.text = viewModel.getMovieTitle(movieData)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainMovieCell.identifier, for: indexPath) as!
+        MainMovieCell
+        
+        let cellViewModel = cellData[indexPath.row]
+        cell.setupCell(viewModel: cellViewModel)
         return cell
     }
     
