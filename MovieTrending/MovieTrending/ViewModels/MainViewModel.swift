@@ -7,29 +7,45 @@
 
 import Foundation
 
-struct MainViewModel {
+class MainViewModel {
     
+    var isLoading: Observable<Bool> = Observable(false)
+    var cellDataSource: Observable<[MoviesResult]> = Observable(nil)
+    var dataSourse: Movies?
     
     func numberOfSections() -> Int {
         1
     }
     
     func numberOfRows(in section: Int) -> Int {
-        10
+        self.dataSourse?.results.count ?? 0
     }
     
     func getData()  {
-        ApiCaller.getTrending { result in
+        
+        if isLoading.value ?? true {
+            return
+        }
+        isLoading.value = true
+        ApiCaller.getTrending {[weak self] result in
+            self?.isLoading.value = false
             
             switch result {
-                
             case .success(let movies):
                 print(movies.results.count)
-                
+                self?.dataSourse = movies
+                self?.mapCellData()
             case .failure(let error):
                 print(error)
             }
         }
     }
     
+    func mapCellData() {
+        self.cellDataSource.value = self.dataSourse?.results ?? []
+    }
+    
+    func getMovieTitle(_ movie: MoviesResult) -> String{
+        return movie.title ?? movie.name ?? ""
+    }
 }

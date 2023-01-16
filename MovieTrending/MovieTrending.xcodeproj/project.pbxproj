@@ -16,6 +16,7 @@
 		81DBBF742974BF7100F90D10 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBF732974BF7000F90D10 /* NetworkConstants.swift */; };
 		81DBBF762974C36800F90D10 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBF752974C36800F90D10 /* ApiCaller.swift */; };
 		81DBBF782974C46B00F90D10 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBF772974C46B00F90D10 /* Movies.swift */; };
+		81DBBF7B2975C44D00F90D10 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBBF7A2975C44D00F90D10 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		81DBBF732974BF7000F90D10 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		81DBBF752974C36800F90D10 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		81DBBF772974C46B00F90D10 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		81DBBF7A2975C44D00F90D10 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		81DBBF4D2972195500F90D10 /* MovieTrending */ = {
 			isa = PBXGroup;
 			children = (
+				81DBBF792975C43C00F90D10 /* Classes */,
 				81DBBF6D29724B0C00F90D10 /* Networking */,
 				81DBBF6C297249C900F90D10 /* Extensions */,
 				81DBBF6B2972499500F90D10 /* Utils */,
@@ -148,6 +151,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		81DBBF792975C43C00F90D10 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				81DBBF7A2975C44D00F90D10 /* Observable.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81DBBF7B2975C44D00F90D10 /* Observable.swift in Sources */,
 				81DBBF782974C46B00F90D10 /* Movies.swift in Sources */,
 				81DBBF4F2972195500F90D10 /* AppDelegate.swift in Sources */,
 				81DBBF762974C36800F90D10 /* ApiCaller.swift in Sources */,
